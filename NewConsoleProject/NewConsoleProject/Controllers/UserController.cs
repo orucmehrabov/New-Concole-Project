@@ -1,39 +1,79 @@
 ﻿using Domain.Models;
+using System.Text.RegularExpressions;
 
 namespace NewConsoleProject.Controllers
 {
     public class UserController
     {
         private List<User> users;
-        private List<Group> groups;
-        private List<Student> students;
 
         public UserController()
         {
             users = new List<User>();
-            groups = new List<Group>();
-            students = new List<Student>();
         }
 
         public void Register()
         {
             Console.WriteLine("Registration");
+            name:
             Console.Write("Name: ");
             string name = Console.ReadLine();
+            if (name.Length < 3)
+            {
+                Console.WriteLine("Name is Short");
+                goto name;
+            }
+            surname:
             Console.Write("Surname: ");
             string surname = Console.ReadLine();
+            if (surname.Length < 3)
+            {
+                Console.WriteLine("Surname is Short");
+                goto surname;
+            }
+            age:
             Console.Write("Age: ");
             int age = int.Parse(Console.ReadLine());
+            if (age<0)
+            {
+                Console.WriteLine("age cant be minus");
+                goto age;
+
+            }
+            email:
             Console.Write("Email: ");
             string email = Console.ReadLine();
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            Regex regex = new Regex(pattern);
+
+            if (!(regex.IsMatch(email)))
+            {
+                Console.WriteLine("Wrong email structure");
+                goto email;
+            }
+            password:
             Console.Write("Password: ");
             string password = Console.ReadLine();
+            string pattern1 = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$";
+            Regex regex1 = new Regex(pattern1);
+
+            if (!(regex1.IsMatch(password)))
+            {
+                Console.WriteLine("The password is invalid");
+                goto password;
+            }
+
             Console.Write("Confirm Password: ");
             string confirmPassword = Console.ReadLine();
 
             if (password != confirmPassword || !email.Contains("@ishare"))
             {
                 Console.WriteLine("Registration failed. Please try again.");
+                goto password;
+            }
+            else
+            {
+                Console.WriteLine("Registration successful");
                 return;
             }
 

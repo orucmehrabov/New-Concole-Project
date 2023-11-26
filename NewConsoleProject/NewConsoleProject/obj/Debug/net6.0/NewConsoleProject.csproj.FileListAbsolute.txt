@@ -20,3 +20,4 @@ C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\NewCons
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\NewConsoleProject\obj\Debug\net6.0\NewConsoleProject.pdb
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\NewConsoleProject\obj\Debug\net6.0\NewConsoleProject.genruntimeconfig.cache
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\NewConsoleProject\obj\Debug\net6.0\ref\NewConsoleProject.dll
+C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\NewConsoleProject\obj\Debug\net6.0\NewConsoleProject.sourcelink.json
