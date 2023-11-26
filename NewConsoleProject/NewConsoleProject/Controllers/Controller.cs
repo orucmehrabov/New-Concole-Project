@@ -1,15 +1,20 @@
 ﻿using Domain.Models;
 using System.Text.RegularExpressions;
+using Group = Domain.Models.Group;
 
 namespace NewConsoleProject.Controllers
 {
-    public class UserController
+    public class Controller
     {
         private List<User> users;
+        private List<Group> groups;
+        private List<Student> students;
 
-        public UserController()
+        public Controller()
         {
             users = new List<User>();
+            groups = new List<Group>();
+            students = new List<Student>();
         }
 
         public void Register()
@@ -66,15 +71,10 @@ namespace NewConsoleProject.Controllers
             Console.Write("Confirm Password: ");
             string confirmPassword = Console.ReadLine();
 
-            if (password != confirmPassword || !email.Contains("@ishare"))
+            if (password != confirmPassword)
             {
                 Console.WriteLine("Registration failed. Please try again.");
                 goto password;
-            }
-            else
-            {
-                Console.WriteLine("Registration successful");
-                return;
             }
 
             User newUser = new User
@@ -144,13 +144,119 @@ namespace NewConsoleProject.Controllers
         public void GroupOperations()
         {
             Console.WriteLine("Group Operations");
-            // Implement group operations here
+
+            void CreateGroup(string name, int capacity)
+            {
+                Group group = new Group
+                {
+                    Id = groups.Count + 1,
+                    Name = name,
+                    Capacity = capacity
+                };
+
+                groups.Add(group);
+            }
+
+            void DeleteGroup(int id)
+            {
+                Group group = groups.Find(g => g.Id == id);
+
+                if (group != null)
+                {
+                    groups.Remove(group);
+                }
+            }
+
+            void EditGroup(int id, string newName, int newCapacity)
+            {
+                Group group = groups.Find(g => g.Id == id);
+
+                if (group != null)
+                {
+                    group.Name = newName;
+                    group.Capacity = newCapacity;
+                }
+            }
+
+            Group GetGroupById(int id)
+            {
+                return groups.Find(g => g.Id == id);
+            }
+
+            List<Group> GetAllGroups()
+            {
+                return groups;
+            }
+
+            List<Group> SearchGroupsByName(string name)
+            {
+                return groups.FindAll(g => g.Name.Contains(name));
+            }
+
+            List<Group> SortGroupsByCapacity()
+            {
+                groups.Sort((g1, g2) => g1.Capacity.CompareTo(g2.Capacity));
+                return groups;
+            }
+
         }
 
         public void StudentOperations()
         {
             Console.WriteLine("Student Operations");
-            // Implement student operations here
+            void CreateStudent(string fullname, int age)
+            {
+                Student student = new Student
+                {
+                    Id = students.Count + 1,
+                    FullName = fullname,
+                    Age = age
+                };
+
+                students.Add(student);
+            }
+
+            void DeleteStudent(int id)
+            {
+                Student student = students.Find(s => s.Id == id);
+
+                if (student != null)
+                {
+                    students.Remove(student);
+                }
+            }
+
+            void EditStudent(int id, string newFullname, int newAge)
+            {
+                Student student = students.Find(s => s.Id == id);
+
+                if (student != null)
+                {
+                    student.FullName = newFullname;
+                    student.Age = newAge;
+                }
+            }
+
+            Student GetStudentById(int id)
+            {
+                return students.Find(s => s.Id == id);
+            }
+
+            List<Student> GetAllStudents()
+            {
+                return students;
+            }
+
+            List<Student> SearchStudentsByFullname(string fullname)
+            {
+                return students.FindAll(s => s.FullName.Contains(fullname));
+            }
+
+            List<Student> SortStudentsByAge()
+            {
+                students.Sort((s1, s2) => s1.Age.CompareTo(s2.Age));
+                return students;
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        UserController userController = new UserController();
+        Controller userController = new Controller();
 
         Console.WriteLine("Welcome to Code Academy!");
 
