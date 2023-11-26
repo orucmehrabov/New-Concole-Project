@@ -15,3 +15,4 @@ C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Service
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Services\obj\Debug\net6.0\refint\Services.dll
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Services\obj\Debug\net6.0\Services.pdb
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Services\obj\Debug\net6.0\ref\Services.dll
+C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Services\obj\Debug\net6.0\Services.sourcelink.json

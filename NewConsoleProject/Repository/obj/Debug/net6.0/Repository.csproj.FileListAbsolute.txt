@@ -13,3 +13,4 @@ C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Reposit
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Repository\obj\Debug\net6.0\refint\Repository.dll
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Repository\obj\Debug\net6.0\Repository.pdb
 C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Repository\obj\Debug\net6.0\ref\Repository.dll
+C:\Users\oruc-\OneDrive\Masaüstü\New Console Project\NewConsoleProject\Repository\obj\Debug\net6.0\Repository.sourcelink.json
